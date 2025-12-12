@@ -236,6 +236,12 @@ if [ -f "assets/jamu_system_prompt.txt" ]; then
     echo "✅ Custom system prompt included in package"
 fi
 
+# Copy license files for AGPL compliance
+cp LICENSE-AGPL "$RESOURCES_DIR/"
+cp JAMU_MODIFICATIONS.md "$RESOURCES_DIR/"
+echo "https://github.com/jamu-admin/jamu-ui" > "$RESOURCES_DIR/SOURCE_CODE.txt"
+echo "✅ License files included (AGPL compliance)"
+
 # Verify AbletonEMCP was copied
 if [ -d "$RESOURCES_DIR/AbletonEMCP" ]; then
   echo "✅ AbletonEMCP remote script included in package"
